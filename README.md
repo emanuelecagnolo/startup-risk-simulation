@@ -1,23 +1,30 @@
 # Risk-Return Simulation
 
-This project reproduces the intuition behind Howard Marks' risk-return chart 
-through a Monte Carlo simulation. Realized returns are drawn at increasing 
-risk levels, with dispersion growing faster than expected returns. The 
-result illustrates why picking the right investments matters more at higher 
-levels of risk.
+This repository contains simulations exploring risk and return in investment 
+outcomes, with a focus on venture capital and private equity.
 
-## Method
+## Projects
 
-Five risk levels are defined. At each level, actual returns are drawn from 
-a normal distribution with mean and standard deviation calibrated to reflect 
-the risk profile of asset classes ranging from government bonds to venture 
-capital. The number of observations decreases with risk to reflect the 
-smaller number of deals at higher risk levels.
+### 1. Realized returns across risk levels
 
-## Files
+Reproduces the intuition behind Howard Marks' risk-return chart through a 
+Monte Carlo simulation. Realized returns are drawn at increasing risk 
+levels, with dispersion growing faster than expected returns. The result 
+illustrates why picking the right investments matters more at higher levels 
+of risk.
 
-- `power_law.ipynb`: full notebook with the simulation and plot.
+File: `risk_return_simulation.ipynb`
+
+### 2. Survivorship bias in risk-return estimation
+
+Extends the simulation to show how survivorship bias distorts the estimated 
+relationship between risk and return. Investments below a risk-dependent 
+threshold are dropped from the observable sample, mimicking the way failed 
+funds and failed deals disappear from track records. Comparing the OLS 
+slope on the full sample versus the survivor sample makes the bias visible.
+
+File: `survivorship_bias_simulation.ipynb`
 
 ## Tools
 
-Python, numpy, matplotlib.
+Python, numpy, pandas, matplotlib, statsmodels.
